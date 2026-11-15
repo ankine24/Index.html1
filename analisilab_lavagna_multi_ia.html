@@ -7,7 +7,7 @@
 
     <!-- Configurazione Web App / PWA per iPad e iOS (apertura a tutto schermo dalla Home) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="AnalisiLab">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#090e1a">
@@ -72,6 +72,16 @@
         });
     })();
     </script>
+
+    <style>
+        /* Tiene i pulsanti in alto/basso fuori dalla zona della barra di stato e dei bordi dell'iPad.
+           --gap-alto si può aumentare (es. 4rem) se vuoi i pulsanti ancora più in basso. */
+        :root { --gap-alto: 3.25rem; }
+        .fixed.top-4  { top: calc(env(safe-area-inset-top, 0px) + var(--gap-alto)) !important; }
+        .fixed.top-20 { top: calc(env(safe-area-inset-top, 0px) + var(--gap-alto) + 4rem) !important; }
+        .fixed.bottom-4  { bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem) !important; }
+        .fixed.bottom-20 { bottom: calc(env(safe-area-inset-bottom, 0px) + 5rem) !important; }
+    </style>
 
     <style>
         html, body {
